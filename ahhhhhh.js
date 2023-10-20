@@ -38,7 +38,7 @@ figure out a way to sperate each charcode
     }
 function load(saveString) {
 	const Load1 = saveString.split("-");
-	for (let i = 0; i < saveString.length; i++) {
+	for (let i = 0; i < saveString.length; i+=2) {
         let substring = Load1[i]
 	    for	(let h = 0; h<substring.length;h+=2){
 		    console.log(String.fromCharCode(substring.charAt(h)))
