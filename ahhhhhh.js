@@ -18,19 +18,26 @@ function varSav(sava) {
     const saveVar = [];
     let a = parseInt(sava)
     var vared = sava
-	var sav = sava.toString();
     if (typeof vared === "string" && isNaN(a)) {
         vared = sava.toUpperCase();
-    } else if (typeof sava === "number") {
+		let len = vared.length;
+		for (let i = 0; i < len; i++) {
+			saveVar.push(vared.charCodeAt(i))
+		}
+		var varSavi = saveVar.join('')
+		return varSavi
+	} else if (typeof sava === "number") {
         vared = sava.toString();
-    }
-    let len = sava.length;
-    for (let i = 0; i < len; i++) {
-        saveVar.push(vared.charCodeAt(i))
-    }
-    var varSavi = saveVar.join('')
-    return varSavi
+		let len = vared.length;
+		for (let i = 0; i < len; i++) {
+			saveVar.push(vared.charCodeAt(i))
+		}
+		var varSavi = saveVar.join('')
+		return varSavi
+	}else{function kys (num){for(let i = 0; i<num;i++){console.log("kys")}}}
+
 }
+
 /*
 1.Make second function to do each segment
 2. assign each segment to its corrisponding varible 
@@ -49,8 +56,8 @@ function load(saveString) {
             fin[x].push(String.fromCharCode(Load3.substring(h, i)))
         }
     }
-    Load3 = fin.length;
-    for (let j = 0; j < Load3; j++) {
+    const Load4 = fin.length;
+    for (let j = 0; j < Load4; j++) {
         console.log(fin)
         const fina = fin.join("")
         const final = removecoma(fina)
