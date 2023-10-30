@@ -4,7 +4,10 @@ var str; // strength for melee weapons
 var hp; // current health
 var mh; // max health
 var mgc; // magic for like magic, you know
-var ris = []; // resistance?
+var ris = [
+    [1],
+    [bludge]
+]; // resistance?
 var named = "GREG"; // can't change to name, JS spaghetti
 var gs; // game state
 var loc; // location
@@ -65,16 +68,18 @@ for their array pos also can
 might want to scramble the saveString to make it harder to crack.
 */
 //funcy town
-function pushLVL(nLVL){
+function pushLVL(nLVL) {
     lvl = nLVL
 }
-function pushVar(varTBP){
+
+function pushVar(varTBP) {
     var type = prompt("Input var to be pushed")
     var vats = {
-        "lvl":pushLVL(varTBP)
+        "lvl": pushLVL(varTBP)
     }
 
 }
+
 function load(saveString) {
     const fin = []
     const Load1 = saveString.split("-");
