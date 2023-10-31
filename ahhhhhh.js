@@ -4,13 +4,10 @@ var str; // strength for melee weapons
 var hp; // current health
 var mh; // max health
 var mgc; // magic for like magic, you know
-var ris = [
-    [1],
-    [bludge]
-]; // resistance?
+var ris = [[1],["bludgen"]]; // resistance?
 var named = "GREG"; // can't change to name, JS spaghetti
 var gs; // game state
-var loc; // location
+var loc; // location 
 function removecoma(rem) {
     remo = rem.split(",");
     remov = remo.join("");
@@ -125,5 +122,20 @@ function moneyUp(add) {
 }
 
 function rizzUp(rlvl, typ) {
+    if(ris.length<=1){
+        ris = [[],[]];
+        ris[0].push(rlvl)
+        ris[1].push(typ)
+    }
+}
 
+function changeName(){
+    var nNam=prompt("Please input new name")
+    if(nNam.toUpperCase() === named){
+        alert("New name can not be the same as old name")
+        changeName
+    } else {
+        named = nNam.toUpperCase()
+    }
+    return("nNam")
 }
