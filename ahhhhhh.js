@@ -39,6 +39,7 @@ function varSav(sava) {
             for (let i = 0; i < num; i++) {
                 console.log("kys")
             }
+            kys(0)
         }
     }
 
@@ -126,7 +127,14 @@ function rizzUp(rlvl, typ) {
         ris = [[],[]];
         ris[0].push(rlvl)
         ris[1].push(typ)
-    }
+    } else {
+        var x = prompt("You already have a resistnece active would you like to replace it? Y/N")
+        if (x.toUpperCase() === "y"){        
+            ris = [[],[]];
+            ris[0].push(rlvl)
+            ris[1].push(typ)
+    } else {}
+}
 }
 
 function changeName(){
