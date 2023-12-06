@@ -1,28 +1,10 @@
-function asciiIfi(asc) {
-	if (typeof asc === "number") {
-		ascii = asc.toString();
-		var leng = ascii.length;
-		let fin = [[],[],[],[]];
-		for (let i = 0; i < leng; i++) {
-			fin.push(ascii.charCodeAt(i));
-			var fina = fin.join("");
-			var final = removecoma(fina);
-			return final;
-		}
-	} else if (typeof asc === "string") {
-		var asci = parseInt(asc)
-		if (isNaN(asci)) {
-			var x = Error("nuh uh")
-			console.log(x)
-			return final;
-		} else {
-			ascii = asc.toString();
-			var leng = ascii.length;
-			let final = "";
-			for (let i = 0; i < leng; i++) {
-				final += ascii.charCodeAt(i);
-				return final;
-			}
-		}
+function varSav(sava) {
+	const saveVar = [];
+	let a = parseInt(sava)
+	sava.toString()
+	for (let i = 0; i < len; i++) {
+		saveVar.push(vared.charCodeAt(i))
 	}
+	return saveVar.join('')
+
 }

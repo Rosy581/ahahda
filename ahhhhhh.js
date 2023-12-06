@@ -8,40 +8,15 @@ var ris = [[1],["bludgen"]]; // resistance?
 var named = "GREG"; // can't change to name, JS spaghetti
 var gs; // game state
 var loc; // location 
-function removecoma(rem) {
-    remo = rem.split(",");
-    remov = remo.join("");
-    return remov;
-}
 
 function varSav(sava) {
     const saveVar = [];
     let a = parseInt(sava)
-    var vared = sava
-    if (typeof vared === "string" && isNaN(a)) {
-        vared = sava.toUpperCase();
-        let len = vared.length;
-        for (let i = 0; i < len; i++) {
-            saveVar.push(vared.charCodeAt(i))
-        }
-        var varSavi = saveVar.join('')
-        return varSavi
-    } else if (typeof sava === "number") {
-        vared = sava.toString();
-        let len = vared.length;
-        for (let i = 0; i < len; i++) {
-            saveVar.push(vared.charCodeAt(i))
-        }
-        var varSavi = saveVar.join('')
-        return varSavi
-    } else {
-        function kys(num) {
-            for (let i = 0; i < num; i++) {
-                console.log("kys")
-            }
-            kys(0)
-        }
+    sava.toString()
+    for (let i = 0; i < len; i++) {
+        saveVar.push(vared.charCodeAt(i))
     }
+    return saveVar.join('')
 
 }
 
@@ -80,30 +55,17 @@ function pushVar(varTBP) {
 
 function load(saveString) {
     const fin = []
-    const Load1 = saveString.split("-");
-    const Load2 = Load1.length;
-    for (let x = 0; x < Load2; x++) {
+    saveString.split("-");
+    for (let x = 0; x < saveString.length; x++) {
         const Load3 = Load1[x].toString();
         for (let i = 0, h = 2; i < Load3.length; i += 2, h += 2) {
             fin[x].push(String.fromCharCode(Load3.substring(h, i)))
         }
-    }
-    const Load4 = fin.length;
-    for (let j = 0; j < Load4; j++) {
-        console.log(fin)
-        const fina = fin.join("")
-        const final = removecoma(fina)
-        return final
-    }
+    }   return fin.join()
 }
 
 function save() {
-    var saveLevel = varSav(lvl);
-    var saveMoney = varSav(moni);
-    var saveName = varSav(named);
-    var saveLocation = varSav(loc);
-    var saveResistence = varSav(ris);
-    var saveString = saveLevel + "-" + saveMoney + "-" + saveName + "-" + saveLocation + "-" + saveResistence;
+    var saveString = varSav(lvl) + "-" + varSav(moni) + "-" + varSav(named) + "-" + varSav(loc) + "-" + varSav(ris);
     return saveString;
 }
 /*
@@ -111,7 +73,7 @@ mechanics functions now
 */
 function lvlUP() {
     lvl = parseInt(lvl)
-    lvl = lvl += 1
+    lvl++
     console.log("LEVELUP!!")
     return lvl
 }
@@ -137,13 +99,11 @@ function rizzUp(rlvl, typ) {
 }
 }
 
-function changeName(){
-    var nNam=prompt("Please input new name")
+function changeName(nNam){
     if(nNam.toUpperCase() === named){
         alert("New name can not be the same as old name")
-        changeName
     } else {
         named = nNam.toUpperCase()
     }
-    return("nNam")
+    return(nNam)
 }
