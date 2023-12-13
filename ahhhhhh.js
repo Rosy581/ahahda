@@ -19,27 +19,6 @@ function varSav(sava) {
     return saveVar.join('')
 
 }
-
-/*
-1.Make second function to do each segment
-2. assign each segment to its corrisponding varible 
-do this by using object things
-ex.
-function isLetter(){return test = "letter"}
-function isNumber(){return test = "number"}
-var test = {
-    "1":isNumber(),
-    "a":isLetter(),
-}
-test["1"]
-returns number
-test["a"]
-returns letter
-use this to take the value of x to assign varibles
-for their array pos also can
-
-might want to scramble the saveString to make it harder to crack.
-*/
 //funcy town
 function pushLVL(nLVL) {
     lvl = nLVL
