@@ -8,6 +8,8 @@ class team {
     }
 
 }
+const team1 = new teams("one")
+team1.classId
 class questions {
     _question: string
     _value: number
