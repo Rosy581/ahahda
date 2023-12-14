@@ -28,11 +28,11 @@ class questions {
  
 
 //figure out how to set up so when you press during the 30 seconds it will stop the timer
-function add(team:number ,amount:number){
+ win(team:number ,amount:number){
     team.points+=amount
     _answered = true
 }
-function subtract(team,amount){
+ subtract(team,amount){
     team-=amount
 }
 }
