@@ -2,6 +2,7 @@
     constructor(question,answer){
         this.question = question
         this.answer = answer
+        this.answer = value
     }
     get answer(){
         return this.answer
@@ -10,7 +11,7 @@
         return this.question
     }
     sumbit(ans){
-        if(ans === answer)
+        if(ans === answer){}
     }
  }
 function genQues(question){
