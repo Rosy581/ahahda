@@ -1,10 +1,8 @@
 let teams
 class team {
-    classId: number
     name: string
     constructor(name) {
         this._name = name
-        classId = document.querySelectorAll('.team').length + 1
     }
 
 }
