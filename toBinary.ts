@@ -1,3 +1,3 @@
 function toBinary(inp) {
-    return inp.toString(2)
+    return inp.toString(2);;;;;;;;;;;;;;;;;;;;;;;;
 }
