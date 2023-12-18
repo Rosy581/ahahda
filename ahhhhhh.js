@@ -9,15 +9,13 @@ var named = "GREG"; // can't change to name, JS spaghetti
 var gs; // game state
 var loc; // location 
 
-function varSav(sava) {
-    const saveVar = [];
-    let a = parseInt(sava)
-    sava.toString()
-    for (let i = 0; i < len; i++) {
-        saveVar.push(vared.charCodeAt(i))
-    }
-    return saveVar.join('')
-
+function varSave(varToBeSaved) {
+	const savedVar = [];
+	varToBeSaved.toString()
+	for (let i = 0; i < varToBeSaved.length; i++) {
+		savedVar.push(varToBeSaved.charCodeAt(i))
+	}
+	return savedVar.join('')
 }
 //funcy town
 function pushLVL(nLVL) {
@@ -44,7 +42,7 @@ function load(saveString) {
 }
 
 function save() {
-    var saveString = varSav(lvl) + "-" + varSav(moni) + "-" + varSav(named) + "-" + varSav(loc) + "-" + varSav(ris);
+    var saveString = varSave(lvl) + "-" + varSave(moni) + "-" + varSave(named) + "-" + varSave(loc) + "-" + varSave(ris);
     return saveString;
 }
 /*
@@ -74,7 +72,7 @@ function rizzUp(rlvl, typ) {
             ris = [[],[]];
             ris[0].push(rlvl)
             ris[1].push(typ)
-    } else {}
+    }
 }
 }
 

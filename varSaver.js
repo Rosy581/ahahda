@@ -5,5 +5,4 @@ function varSave(varToBeSaved) {
 		savedVar.push(varToBeSaved.charCodeAt(i))
 	}
 	return savedVar.join('')
-
 }
