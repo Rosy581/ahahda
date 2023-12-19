@@ -1,21 +1,21 @@
-var lvl = "21"; // level uwu
-var moni = 125; // dabloons
-var str; // strength for melee weapons
-var hp; // current health
-var mh; // max health
-var mgc; // magic for like magic, you know
-var ris = [[1],["bludgen"]]; // resistance?
-var named = "GREG"; // can't change to name, JS spaghetti
-var gs; // game state
-var loc; // location 
+let lvl = "21"; // level uwu
+let moni = 125; // dabloons
+let strength; // strength for melee weapons
+let currenthp; // current health
+let maxhp; // max health
+let mgc; // magic for like magic, you know
+let named = "GREG"; // can't change to name, JS spaghetti
+let gameState; // game state
+let loc; // location 
+
 
 function varSave(varToBeSaved) {
-	const savedVar = [];
-	varToBeSaved.toString()
-	for (let i = 0; i < varToBeSaved.length; i++) {
-		savedVar.push(varToBeSaved.charCodeAt(i))
-	}
-	return savedVar.join('')
+    const savedVar = [];
+    varToBeSaved.toString()
+    for (let i = 0; i < varToBeSaved.length; i++) {
+        savedVar.push(varToBeSaved.charCodeAt(i))
+    }
+    return savedVar.join('')
 }
 //funcy town
 function pushLVL(nLVL) {
@@ -23,8 +23,7 @@ function pushLVL(nLVL) {
 }
 
 function pushVar(varTBP) {
-    var type = prompt("Input var to be pushed")
-    var vats = {
+    const pushers = {
         "lvl": pushLVL(varTBP)
     }
 
@@ -38,11 +37,11 @@ function load(saveString) {
         for (let i = 0, h = 2; i < Load3.length; i += 2, h += 2) {
             fin[x].push(String.fromCharCode(Load3.substring(h, i)))
         }
-    }   return fin.join()
+    } return fin.join()
 }
 
 function save() {
-    var saveString = varSave(lvl) + "-" + varSave(moni) + "-" + varSave(named) + "-" + varSave(loc) + "-" + varSave(ris);
+    let saveString = varSave(lvl) + "-" + varSave(moni) + "-" + varSave(named) + "-" + varSave(loc) + "-" + varSave(ris);
     return saveString;
 }
 /*
@@ -62,25 +61,25 @@ function moneyUp(add) {
 }
 
 function rizzUp(rlvl, typ) {
-    if(ris.length<=1){
-        ris = [[],[]];
+    if (ris.length <= 1) {
+        ris = [[], []];
         ris[0].push(rlvl)
         ris[1].push(typ)
     } else {
-        var x = prompt("You already have a resistnece active would you like to replace it? Y/N")
-        if (x.toUpperCase() === "y"){        
-            ris = [[],[]];
+        const x = prompt("You already have a resistnece active would you like to replace it? Y/N")
+        if (x.toUpperCase() === "y") {
+            ris = [[], []];
             ris[0].push(rlvl)
             ris[1].push(typ)
+        }
     }
 }
-}
 
-function changeName(nNam){
-    if(nNam.toUpperCase() === named){
+function changeName(nNam) {
+    if (nNam.toUpperCase() === named) {
         alert("New name can not be the same as old name")
     } else {
         named = nNam.toUpperCase()
     }
-    return(nNam)
+    return (nNam)
 }
