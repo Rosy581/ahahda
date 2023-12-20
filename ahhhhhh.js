@@ -1,13 +1,21 @@
 let lvl = "21"; // level uwu
-let moni = 125; // dabloons
+let skillPoints = {
+    magiks:11,
+    strength:0,
+    unAssigned:parseInt(lvl)-magiks+strength,
+}
+let money = 125; // dabloons
 let strength; // strength for melee weapons
 let currenthp; // current health
-let maxhp; // max health
-let mgc; // magic for like magic, you know
+let maxhp; // max health // magic for like magic, you know
 let named = "GREG"; // can't change to name, JS spaghetti
 let gameState; // game state
 let loc; // location 
-
+let items = {
+    "arrows":30,
+    "bones":2,
+    "coins":money
+}
 
 function varSave(varToBeSaved) {
     const savedVar = [];
@@ -60,24 +68,9 @@ function moneyUp(add) {
     return moni
 }
 
-function rizzUp(rlvl, typ) {
-    if (ris.length <= 1) {
-        ris = [[], []];
-        ris[0].push(rlvl)
-        ris[1].push(typ)
-    } else {
-        const x = prompt("You already have a resistnece active would you like to replace it? Y/N")
-        if (x.toUpperCase() === "y") {
-            ris = [[], []];
-            ris[0].push(rlvl)
-            ris[1].push(typ)
-        }
-    }
-}
-
-function changeName(nNam) {
+function changename(nNam) {
     if (nNam.toUpperCase() === named) {
-        alert("New name can not be the same as old name")
+        alert("New named can not be the same as old named")
     } else {
         named = nNam.toUpperCase()
     }
