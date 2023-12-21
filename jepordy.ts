@@ -29,7 +29,6 @@ class questions {
         return this.value
     }
 
-
     //figure out how to set up so when you press during the 30 seconds it will stop the timer
     win(team: number, amount: number) {
         team.points += amount
@@ -44,7 +43,7 @@ function main() {
 
 }
 const test = new questions()
-function genQues(question: object) {
+function loadQuestion(question: object) {
     // put code for question
-
+    
 }
