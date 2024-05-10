@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const {Logger} = require("./logger.js");
+        const file = new Logger()
+        function setWriteRun(fil,str){
+            file.setFile(fil);
+            file.writeFile(str);
+            const work = new Worker(fil)
+        };
+    </script>
+    <link rel="stylesheet" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLSHIT</title>
+</head>
+<body>
+    <form>
+        <label>Input file name</label>
+        <input id = "fileName"type="text">
+        <textarea id = "text" rows="15" cols="60"></textarea>
+        <input type = "submit" value="SUBMIT" onclick="writeNset(Document.getElementById('fileName').value,Document.getElementById('text').value)">
+    </form>
+</body>
+</html>

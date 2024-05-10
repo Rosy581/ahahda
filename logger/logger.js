@@ -1,30 +1,52 @@
 class Logger{
-    constructor(){
+    constructor(logg){
         this.fs = require("node:fs")
+        let d = new Date(Date.now())
+        if(this.fs.existsSync(`${logg} ${d.getMonth()+1}-${d.getDate()}-${d.getFullYear()}`)){
+            this._log = `${logg} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`;
+        } else if(logg == undefined){
+            this._log;
+        }else {
+            console.log("File not found...")
+            console.log("Creaing file...")
+            this.fs.writeFile(`${logg} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`, '', (err)=>{
+                if(err){
+                    console.error(err)
+                }
+            });
+            this._log = `${logg} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`
+        }
     }
     setLog(str){
-        fetch(str, { method: "HEAD" }) 
-    .then(response => { 
-        if (response.ok) { 
-            console.log("Output set"); 
-        } else { 
-            console.log("File does not exist"); 
-        } 
-    }) 
-    .catch(error => { 
-        console.log("Logger error =>", error); 
-    }); 
+        let d = new Date(Date.now())
+        if(this.fs.existsSync(`${str} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`)){
+            this._log = `${str} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`
+        } else {
+            console.log("File not found...")
+            console.log("Creaing file...")
+            fs.writeFile(`${str} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`, '', (err)=>{
+                if(err){
+                    console.error(err)
+                }
+            });
+            this._log = `${str} ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}`
+        }
+    }
+    setFile(logg){
+        this._log = logg;
+    }
+    write(fil){
+        this.fs.writeFile(this._log, fil), (er)=>{
+            console.error(er)
+        }
     }
     log(inp){
-    let a = new Date(Date.now());
-    fs.appendFile(`\n${inp} AT ${new Date(Date.now()).getHours()}:${new Date(Date.now()).getMinutes}.new Date(Date.now()).getMilliseconds()`, (er)=>{
-             if(er){
+        let a = new Date(Date.now());
+        this.fs.appendFile(this._log,`${inp} --- ${a.getHours()}:${a.getMinutes()}.${a.getMilliseconds()}\n`, (er)=>{
+            if(er){
                 console.error(er)
-            } else {
-                console.log("logged")
-            }
+            }   
         }
     )};   
 }
-const test = new Logger()
-    .setLog("../test.txt")
+module.exports = Logger
